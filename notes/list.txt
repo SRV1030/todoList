@@ -1,0 +1,5 @@
+<!-- <%if(dayT==="Sunday" || dayT==="Thursay"){%>
+    <h1 style="color:powderblue;"> <%=dayT%> todo List</h1>
+<% } else{ %> 
+    <h1 style="color:royalblue;"><%=dayT%>todo List</h1>
+<%  } %> -->

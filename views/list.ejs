@@ -1,0 +1,29 @@
+<%-include ("header")-%>
+    <div id="heading" class="box">
+        <h1>
+            <%=listTitile%>
+        </h1>
+    </div>
+
+    <div class="box">        
+        <% itemsT.forEach(item=> {%>
+        <form action="/delete" method="POST">
+                <div class="item">
+                    <Input name="checkedItem" value="<%=item._id%>" type="checkbox" onchange="this.form.submit()">
+                    <p>
+                        <%=item.name%>
+                    </p>
+                    </Input>
+                    <!-- hidden elements are not seen by user and can be used by us to update or delete individual list -->
+                    <Input name="ListName" type="hidden" value="<%=listTitile%>"></Input>
+                </div>
+        </form>
+        <% }); %>
+
+            <form class="item" action="/" method="POST">
+                <Input name="todoItem" type="text" placeholder="Enter your list item" autocomplete="off"></Input>
+                <button type="submit" name="List" value="<%=listTitile%>">+</button>
+            </form>
+    </div>
+
+    <%-include ("footer")-%>
